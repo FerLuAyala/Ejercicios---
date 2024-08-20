@@ -1,4 +1,4 @@
-// Inicializar el array para almacenar las notas
+// Inicializar el array para  las notas
 let notas = [];
 let nota;
 let continuar = true;
@@ -6,7 +6,7 @@ let continuar = true;
 // Ingresar notas hasta que el usuario decida detenerse
 while (continuar) {
     // Solicitar una nota al usuario
-    nota = parseFloat(prompt("Ingrese una nota (o 'Cancelar' para finalizar):"));
+    nota = parseFloat(prompt("Ingrese una nota de 0 a 10"));
 
     // Verificar si el valor ingresado es un número válido
     if (isNaN(nota) || nota < 0 || nota > 10) {
