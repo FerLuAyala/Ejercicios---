@@ -1,0 +1,151 @@
+/**
+ *	Versión 1.0.0
+ */
+@charset "utf-8";
+
+/**
+ *	Fonts
+ */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+/**
+ *	Mobile
+ */
+
+/**	General */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+/**	Body */
+body {
+    background-color: #fa7f60;
+    color: #2a2c2c;
+}
+
+/**	Header */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+/**	Encabezados */
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat';
+    font-size: 3.6em;
+    line-height: 1.5;
+    font-weight: 700;
+    text-align: center;
+}
+
+/**	Main */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4em 2em;
+    background-color: #fff;
+}
+
+main h2 {
+    color: rgb(110, 110, 110);
+}
+
+/**	Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2em;
+}
+
+footer ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+}
+
+footer ul li {
+    font-family: 'Montserrat';
+    font-size: 1.4em;
+    line-height: 1.5;
+    text-align: center;
+    color: #d0e0e3;
+}
+
+footer ul li a {
+    font-family: 'Montserrat';
+    font-size: 1em;
+    text-decoration: none;
+    color: #181717;
+}
+
+ul {
+    padding-top: 2em;
+    list-style-type: none; /* Elimina los puntos de la lista */
+    
+  }
+  
+  li a {
+    color:#fffefe;
+    text-decoration: none; /* Elimina el subrayado */
+    font-size: 2em;
+  }
+  .boton {
+    background-color: #f58849; /* Color de fondo  */
+    border: none; /* Sin borde */
+    color: white; /* Texto blanco */
+    padding: 15px 32px; /* Espaciado interno */
+    text-align: center; /* Centra el texto */
+    display: inline-block; /* Para que el botón se ajuste al contenido */
+    margin: 4px 2px; /* Espaciado externo */
+    border-radius: 8px; /* Bordes redondeados */
+   
+  }
+
+  .boton:hover {
+    background-color: #45a049; /* Color de fondo al pasar el ratón */
+  }
+/**
+ *	Web
+ */
+@media screen and (min-width: 960px) {
+    #productos {
+        flex-direction: row;
+    }
+
+    #productos div {
+        width: 30%;
+    }
+
+    /**	Footer */
+    footer ul {
+        flex-direction: row;
+    }
+}
