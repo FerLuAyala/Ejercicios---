@@ -35,18 +35,21 @@ let maximaNota = Math.max(...notas);
 
 for (let i = 0; i < notas.length; i++) {
     let nota = notas[i];
-    if (nota < 4) {
-       
-        cantidadDesaprobados++;
+    //si es igual o mayor a 7 esta promocionado y suma en cantidad promocionados
+    if (nota>=7) {
+        cantidadPromocionados++;
     } else {
-       
-        cantidadAprobados++;
-        if (nota >= 7) {
-           
-            cantidadPromocionados++;
+        //si es menor a 7 y mayor =4 esta aprobado
+        if (nota>=4) {
+            cantidadAprobados++;
+
+            //si es menor 4 esta desaprobado
+        } else {
+            cantidadDesaprobados++;  
         }
     }
-}
+    }
+
 
 
 
