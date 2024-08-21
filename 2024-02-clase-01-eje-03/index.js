@@ -1,61 +1,41 @@
-// Inicializar el array para  las notas
-let notas = [];
 let nota;
-let continuar = true;
+//contador
+let contadorDesaprobado = 0, contadorAprobado = 0, contadorPromocionado = 0;
+//acumulador
+let acumuladorDesaprobado = 0, acumuladorAprobado = 0, acumuladorPromocionado = 0;
 
-// Ingresar notas hasta que el usuario decida detenerse
-while (continuar) {
-    // Solicitar una nota al usuario
-    nota = parseFloat(prompt("Ingrese una nota de 0 a 10"));
+do {
+    //lo que se repite al menos 1 vez
+    nota = parseInt(prompt("Ingrese una nota de 0 a 10"));
 
-    // Verificar si el valor ingresado es un número válido
-    if (isNaN(nota) || nota < 0 || nota > 10) {
-        alert("Por favor, ingrese una nota válida entre 0 y 10.");
-        continue;
-    }
+    // empiezo a preguntar
 
-    // Agregar la nota al array
-    notas.push(nota);
+    if (nota < 4) {
 
-    // Preguntar al usuario si desea ingresar otra nota
-    continuar = confirm("¿Desea ingresar otra nota?");
-}
+        //desaprobado
+        contadorDesaprobado = contadorDesaprobado + 1;
+        acumuladorDesaprobado = acumuladorDesaprobado + nota;
 
-//variables 
-//cant de desa, apro, promo
-let cantidadDesaprobados = 0;
-let cantidadAprobados = 0;
-let cantidadPromocionados = 0;
-
-//entre las notas ingresadas buscar la min y la max
-let minimaNota = Math.min(...notas);
-let maximaNota = Math.max(...notas);
-
-// Por cada nota verificar y contar
-
-for (let i = 0; i < notas.length; i++) {
-    let nota = notas[i];
-    //si es igual o mayor a 7 esta promocionado y suma en cantidad promocionados
-    if (nota>=7) {
-        cantidadPromocionados++;
     } else {
-        //si es menor a 7 y mayor =4 esta aprobado
-        if (nota>=4) {
-            cantidadAprobados++;
 
-            //si es menor 4 esta desaprobado
-        } else {
-            cantidadDesaprobados++;  
+        //aprobados
+        contadorAprobado++;
+        acumuladorAprobado += nota;
+
+        //pregunto si promociono
+        if (nota >= 7) {
+
+            //promocionados
+            contadorPromocionado++;
+            acumuladorPromocionado += nota;
         }
     }
-    }
 
+} while (confirm("desea cargar otra nota?"));
 
-
-
-// Mostrar resultados
-alert(`Promedio de alumnos desaprobados: ${cantidadDesaprobados}`);
-alert(`Promedio de alumnos aprobados: ${cantidadAprobados}`);
-alert(`Promedio de alumnos promocionados: ${cantidadPromocionados}`);
-alert(`Nota mínima ingresada: ${minimaNota}`);
-alert(`Nota máxima ingresada: ${maximaNota}`);
+alert(`Hubo ${contadorDesaprobado} alumnos desaprobados y su nota promedio fue de ${(acumuladorDesaprobado /
+    contadorDesaprobado).toFixed(1)}`);
+alert(`Hubo ${contadorAprobado} alumnos aprobados y su nota promedio fue de ${(acumuladorAprobado /
+    contadorAprobado).toFixed(1)}`);
+alert(`Hubo ${contadorPromocionado} alumnos promocionados y su nota promedio fue de ${(acumuladorPromocionado /
+    contadorPromocionado).toFixed(1)}`);
