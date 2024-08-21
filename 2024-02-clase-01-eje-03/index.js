@@ -3,6 +3,8 @@ let nota;
 let contadorDesaprobado = 0, contadorAprobado = 0, contadorPromocionado = 0;
 //acumulador
 let acumuladorDesaprobado = 0, acumuladorAprobado = 0, acumuladorPromocionado = 0;
+// valiables para nota max y min
+let maxN0ta, letminNota;
 
 do {
     //lo que se repite al menos 1 vez
@@ -31,6 +33,19 @@ do {
         }
     }
 
+//pregunto si la nueva nota es mayor a la anterior
+
+if (nota>maxNota) {
+    // si es asi , encontre un nuevo maximo
+    maxNota = nota;
+}
+if (nota<minNota) {
+    // si es asi , encontre un nuevo minimo
+    minNota = nota;
+}
+
+
+
 } while (confirm("desea cargar otra nota?"));
 
 alert(`Hubo ${contadorDesaprobado} alumnos desaprobados y su nota promedio fue de ${(acumuladorDesaprobado /
@@ -39,3 +54,6 @@ alert(`Hubo ${contadorAprobado} alumnos aprobados y su nota promedio fue de ${(a
     contadorAprobado).toFixed(1)}`);
 alert(`Hubo ${contadorPromocionado} alumnos promocionados y su nota promedio fue de ${(acumuladorPromocionado /
     contadorPromocionado).toFixed(1)}`);
+
+    alert(`La nota maxima ${maxNota}`);
+    alert(`La nota minima ${minNota}`);
